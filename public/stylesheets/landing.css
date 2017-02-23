@@ -1,0 +1,142 @@
+/* Tutorial */
+/* https://github.com/nax3t/background-slider */
+
+body {
+	background: #111;
+}
+
+#landing-header {
+	position: relative;
+	text-align: center;
+	padding-top: 50vh;
+	z-index: 1;
+}
+
+#landing-header h1 {
+	color: #eee;
+}
+
+.slideshow {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.slideshow li {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+	background-size: cover;
+	background-position: 50% 50%;
+	opacity: 0;
+	z-index: 0;
+	/* animation: name duraion timing-function delay iteration-count*/
+	animation: imageAnimation 50s linear infinite ;
+}
+
+.slideshow li:nth-child(1) {
+	background-image: url("https://images.unsplash.com/photo-1470470558828-e00ad9dbbc13?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=31a61aac0fe040dbabeddf8638d42e92");
+	/*background-image: url("https://farm1.staticflickr.com/444/19472808621_b37c3e99e9.jpg");*/
+}
+
+.slideshow li:nth-child(2) {
+	background-image: url("https://images.unsplash.com/photo-1473969631237-f466cf342b1f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=a4a69a4e5f9b3b33915fb82eed824dcd");
+	/*background-image: url("https://farm8.staticflickr.com/7229/7402026096_c129f81583.jpg");*/
+	animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3) {
+	background-image: url("https://images.unsplash.com/photo-1484330532448-0131ead44e2f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=8061fffaca1faee84fbf7cd4e1823e10");
+	/*background-image: url("https://farm9.staticflickr.com/8084/8398897628_3227f1dda6.jpg");*/
+	animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4) {
+	background-image: url("https://images.unsplash.com/photo-1454897603434-9015a23e5b46?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=3ec8e00c5a4e58e6f11ada509c7304e1");
+	/*background-image: url("https://farm8.staticflickr.com/7609/16201310064_8d4f117115.jpg");*/
+	animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5) {
+	background-image: url("https://images.unsplash.com/photo-1478792348959-471f6a44f490?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=aaccfadb30d5b927766bff38a462162b");
+	/*background-image: url("https://farm8.staticflickr.com/7302/27714635272_d2e8f15b4b.jpg");*/
+	animation-delay: 40s;
+}
+
+@keyframes imageAnimation {
+	0% {
+		opacity: 0;
+		animation-timing-function: ease-in;
+	}
+	10% {
+		opacity: 1;
+	}
+	20% {
+		opacity: 1;
+		animation-timing-function: ease-out;
+	}
+	30% {
+		opacity: 0;
+	}
+}
+
+/*By default, Modernizr sets classes for all of your tests on the root element (<html> for websites). This means adding the class for each feature when it is supported, and adding it with a 'no-' prefix when it is not */
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}
+
+.icon-rocket:hover {
+	position: relative;
+	animation: fly 1s ease-in;
+}
+
+span  {
+	display: inline-block;
+	animation: spin 1s;
+}
+
+span:nth-child(3) {
+	animation-delay: 0.2s;
+}
+
+span:nth-child(4) {
+	animation-delay: 0.4s;
+}
+
+span:nth-child(5) {
+	animation-delay: 0.55s;
+}
+
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fly {
+	0% {
+		bottom: 0px;
+	}
+	90% {
+		bottom: 400px;
+	}
+	100% {
+		color: red;
+	}
+}
+
+

@@ -1,0 +1,64 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Yelp Taiwan</p>
+			<div class="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img src="<%=city.image%>" title="photo by <%= city.photographer||"anonymous"%>" alt="<%=city._from%>">
+				<div class="caption-full">
+					<h4 class="pull-right"><span class="glyphicon glyphicon-queen" aria-hidden="true"></span></h4>
+					<h4><a href=""><%= city.name%></a></h4>
+					<p><%= city.description %></p>
+					<p class="text-right">
+					<em>Submitted By <%= city.author.username %></em>
+					</p>
+					<% if(currentUser && city.author.id.equals(currentUser._id)) { %>
+					<a class="btn btn-xs btn-warning" href="/city/<%=city._id%>/edit">Edit</a>
+					<form id="delete-form" action="/city/<%=city._id%>?_method=DELETE" method="POST">
+						<button class="btn btn-xs btn-danger ">Delete</button>
+					</form>
+					<% }%>
+				</div>
+			</div>
+			<div class="well">
+				<div class="text-right">
+					<a class="btn btn-success" href="/city/<%=city._id%>/comments/new">Add New Comment</a>
+				</div>
+				<hr>
+				<% city.comments.forEach(function(comment){ %>
+					<div class="row">
+						<div class="col-md-12">
+							<strong><%= comment.author.username%></strong>
+							<% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+								<form id="delete-form" action="/city/<%= city._id %>/comments/<%= comment._id%>?_method=DELETE" method="POST">
+									<button class="btn btn-xs btn-danger pull-right">Delete</button>
+								</form>
+								<a class="btn btn-xs btn-warning pull-right" href="/city/<%= city._id %>/comments/<%= comment._id %>/edit">Edit</a>
+							<% } %>
+								<span class="pull-right">10 days ago</span>
+							<p>
+								<%= comment.text%>
+							</p>
+						</div>
+					</div>
+					
+				<% }) %>
+			</div>
+		</div>
+	</div>
+
+
+	
+	<a href="/city">Go Back</a>
+</div>
+
+
+<% include ../partials/footer %>

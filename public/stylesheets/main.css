@@ -72,15 +72,14 @@ nav.container ul li:nth-child(1) {
 
 nav.container ul li:not(.brand) span:nth-child(1) {
 	display: inline-block;
-	width: 100%;
 	position: relative;
 	top: 10px;
+	width: 100%;
 	transition: all 0.8s;
 }
 
 nav.container ul li:hover:not(.brand) span:nth-child(1) {
 	display: : none;
-	
 	transform: scale(0);
 }
 
@@ -98,10 +97,11 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
 	color: #474;
 }
 
-.signIn{
-	position: absolute;
-	right: 0;
-	top: 17px;
+li.signIn{
+	position: relative;
+	float: right;
+	top: 16px;
+	border-left: solid white 1px;
 }
 
 

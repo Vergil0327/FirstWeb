@@ -24,6 +24,7 @@ var express       = require('express'),
 //requiring routes
 var commentRoutes = require('./routes/comments'),
 	cityRoutes 	  = require('./routes/city'),
+	authRoutes    = require('./routes/auth'),
 	indexRoutes   = require('./routes/index');
 
 mongoose.connect('mongodb://localhost/yelp_taiwan');
@@ -61,6 +62,7 @@ app.use(function(req, res, next){
 /*ROUTES*/
 app.use("/city/:id/comments", commentRoutes);
 app.use("/city", cityRoutes); //define routes begain with /city
+app.use("/", authRoutes);
 app.use("/", indexRoutes);
 
 

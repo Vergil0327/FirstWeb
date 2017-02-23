@@ -1,35 +1,72 @@
 @import "normalize.css";
+@import url(//fonts.googleapis.com/earlyaccess/cwtexyen.css);
+@import url('https://fonts.googleapis.com/css?family=Yatra+One');
+
+* {
+	font-family: 'cwTeXYen','Yatra One', cursive, sans-serif;
+	box-sizing: border-box;
+}
 
 nav.container {
 	position: relative;
 	display: block;
-	background: #eee;
+	background: #aaa;
 	text-transform: uppercase;
 	font-weight: bold;
-	letter-spacing: 
 }
 
 nav.container a {
 	color: black;
 	text-decoration: none;
-	padding: 10px;
+	padding: 5px;
 }
 
 nav.container >ul {
+	width: 100%;
 	margin: 0;
-	padding: 1% 0;
+	padding-left: 0;
+	padding-bottom: 10px;
+}
 
+li.brand h2 {
+	margin: 0;
 }
 
 nav.container >ul li {
 	display: inline-block;
 	margin-left: 0;
-	border-right: solid white 1px;
 	width: 110px;
 	text-align: center;
 }
 
 nav.container >ul li a {
+	padding: 0;
+}
+
+/*Navbar bottom-line*/
+nav.container >ul li:not(.brand):not(.signIn) {
+	font-size: 1.1em;
+	padding-right: 3px;
+	border-right: solid white 1px;
+}
+
+nav.container >ul li:not(.brand):after{
+	display: block;
+	content: "";
+	border-bottom: solid #222 2px;
+	transform: scaleX(0);
+	transition: transform 1s ease-in-out;
+}
+
+nav.container >ul li:not(.brand):hover:after{
+	border-bottom: solid #222 2px;
+	transform: scaleX(1);
+}
+
+/*Navbar English-Chinese change*/
+nav.container ul li:nth-child(1) {
+	width: 170px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -43,13 +80,12 @@ nav.container ul li:not(.brand) span:nth-child(1) {
 
 nav.container ul li:hover:not(.brand) span:nth-child(1) {
 	display: : none;
-	width: 100%;
+	
 	transform: scale(0);
 }
 
 nav.container ul li:not(.brand) span:nth-child(2) {
 	display: inline-block;
-	width: 100%;
 	position: relative;
 	bottom: 10px;
 	transform: scale(0);
@@ -58,16 +94,16 @@ nav.container ul li:not(.brand) span:nth-child(2) {
 
 nav.container ul li:hover:not(.brand) span:nth-child(2) {
 	display: inline-block;
-	width: 100%;
 	transform: scale(1);
 	color: #474;
 }
 
-nav.container ul li:nth-child(1) {
-	width: 170px;
-	margin: 0;
-	padding: 0;
+.signIn{
+	position: absolute;
+	right: 0;
+	top: 17px;
 }
+
 
 /*For city routes*/
 /* - - - - - - - - - - - - - - - - - - - - - - - -*/

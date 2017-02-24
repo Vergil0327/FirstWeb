@@ -4,7 +4,10 @@
 	<a href="">Add New Post</a>
 	<div class="article row col-9">
 		<p>date</p>
-		<h2>homepage <span>tag</span></h2>
+		<div class="article_head">
+			<h2>homepage</h2> 
+			<h4>tag</h4>
+		</div>
 		<p>text preview</p>
 		<a href="">Read more...</a>
 	</div>
@@ -13,7 +16,10 @@
 	<% posts.forEach(function(post){ %>
 		<div class="article row col-9">
 			<p><%= post.createdAt.toLocaleString() %></p>
-			<h2><%= post.title %></h2>
+			<div class="article_head">
+				<h2><%= post.title %></h2>
+				<h4><%= post.tag %></h4>
+			</div>
 			<p><%= post.text.substring(0, 100) %> ...</p>
 			<a href="">Read more...</a>
 		</div>

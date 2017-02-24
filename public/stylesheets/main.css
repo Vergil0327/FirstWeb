@@ -277,5 +277,13 @@ div.article >p{
 	margin: 0;
 }
 
+div.article_head {
+	display: flex;
+	justify-content: space-between;
+}
+
+div.article_head >span {
+
+}
 
 

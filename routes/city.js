@@ -29,14 +29,12 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 	var name = req.body.name;
 	var img = req.body.image;
 	var desc = req.body.description;
-	var photographer = req.body.photographer;
-	var _from = req.body._from;
 	// req.user will contain currently loggedin user{_id & username}
 	var author = {
 		id: req.user._id,
 		username: req.user.username
 	};
-	var newCity = {name: name, image: img, description: desc, photographer: photographer, _from: _from, author: author};
+	var newCity = {name: name, image: img, description: desc, author: author};
 	//Create a new city and save to DB
 	City.create(newCity, function(err, newlyCreatedCity){
 		if(err){

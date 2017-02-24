@@ -2,14 +2,14 @@ var express  = require('express'),
 	passport = require('passport'),
 	router   = express.Router();
 var User     = require('../models/user');
-var Post     = require('../models/post.js');
+var Post   = require('../models/post.js');
 var middleware = require('../middleware');
 
 //==========================
 //     Root ROUTE
 //==========================
 router.get("/", function(req, res){
-	res.render("home");
+	res.redirect("/homepage");
 });
 
 

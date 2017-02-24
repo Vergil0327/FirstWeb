@@ -19,7 +19,8 @@ var express       = require('express'),
 	seedDB 	      = require('./seeds'),
 	passport      = require('passport'),
 	LocalStrategy = require('passport-local'),
-	User 		  = require('./models/user');
+	User 		  = require('./models/user'),
+	Post 		  = require('./models/post');
 
 //requiring routes
 var commentRoutes = require('./routes/comments'),

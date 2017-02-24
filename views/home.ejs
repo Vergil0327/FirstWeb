@@ -8,6 +8,18 @@
 		<p>text preview</p>
 		<a href="">Read more...</a>
 	</div>
+	
+	
+	<% posts.forEach(function(post){ %>
+		<div class="article row col-9">
+			<p><%= post.createdAt.toLocaleString() %></p>
+			<h2><%= post.title %></h2>
+			<p><%= post.text.substring(0, 100) %> ...</p>
+			<a href="">Read more...</a>
+		</div>
+	<% }) %>
+	
+
 </div>
 
 <script type="text/javascript" src="/scripts/nav.js"></script>

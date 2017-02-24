@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Yatra+One');
 
 @media only screen and (max-width: 868px) {
-	nav.container {
+	body {
 		font-size: 0.9em;
 	}
 	li.brand {
@@ -15,8 +15,10 @@
 }
 
 @media only screen and (max-width: 580px) {
-	nav.container {
+	body {
 		font-size: 0.8em;
+	}
+	nav.container {
 		min-width: 450px;
 	}
 	li.brand {
@@ -42,7 +44,7 @@
 }
 
 @media only screen and (min-width: 869px) {
-	nav.container: {
+	body {
 		font-size: 1.1em;
 	}
 	nav.container li {
@@ -59,6 +61,16 @@
 * {
 	font-family: 'cwTeXYen','Yatra One', cursive, sans-serif;
 	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	max-width: 100%;
+	min-height: 100%;
+	background: #eee;
 }
 
 nav.container {
@@ -118,7 +130,6 @@ nav.container >ul li:not(.brand):hover:after:not(.signIn){
 
 /*Navbar English-Chinese change*/
 nav.container ul li:nth-child(1) {
-	
 	margin: 0;
 	padding: 0;
 }
@@ -162,6 +173,63 @@ li.signIn:after{
     clear: both;
     display: table;
 }
+
+/* RWD Grid */
+.col-1 	{width: 8.33%;}
+.col-2 	{width: 16.66%;}
+.col-3 	{width: 25%;}
+.col-4 	{width: 33.33%;}
+.col-5 	{width: 41.66%;}
+.col-6 	{width: 50%;}
+.col-7 	{width: 58.33%;}
+.col-8 	{width: 66.66%;}
+.col-9 	{width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+div.row {
+	margin: auto;
+}
+
+div.article {
+	display: block;
+	position: relative;
+	padding: 10px;
+	margin: 4% auto;
+	color: white;
+	background: #444;
+	border-radius: 10px;
+}
+
+div.article a{
+	color: white;
+	text-decoration: none;
+	float: right;
+}
+
+div.article a:after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+div.article a:hover{
+	color: #a7a;
+}
+
+div.article >p{
+	margin: 0;
+}
+
 
 
 /*For city routes*/

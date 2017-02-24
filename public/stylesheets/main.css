@@ -272,22 +272,3 @@ div.article >p{
 
 
 
-/*For city routes*/
-/* - - - - - - - - - - - - - - - - - - - - - - - -*/
-.thumbnail img {
-	width: 100%;
-}
-
-.thumbnail {
-	padding: 0;
-}
-
-.thumbnail .caption-full {
-	padding: 8px;
-}
-
-#delete-form {
-	display: inline;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - -*/

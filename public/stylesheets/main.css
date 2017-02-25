@@ -279,6 +279,10 @@ div.article_head {
 	justify-content: space-between;
 }
 
+div.article_head +p {
+	text-align: left;
+}
+
 .tag {
 	list-style-type: none;
 }

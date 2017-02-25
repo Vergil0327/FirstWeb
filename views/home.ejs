@@ -1,29 +1,55 @@
 <% include ./partials/homeHeader %>
 
 <div class="container">
-	<a href="">Add New Post</a>
-	<div class="article row col-9">
-		<p>date</p>
-		<div class="article_head">
-			<h2>homepage</h2> 
-			<h4>tag</h4>
+	<div class="row">
+		<div class="col-3">
+			<ul class="tag">
+			<strong><h3>Tag List</h3></strong>
+			<% posts.forEach(function(post){ %>	
+				<% if(post.tag === "Type_1"){ %>
+					<li><%= post.tag %></li>
+					<ul>
+						<li><a href=""><%= post.tag%></a></li>
+					</ul>
+				<% } else if(post.tag ==="Type_2"){ %>
+					<li><%= post.tag %></li>
+					<ul>
+						<li><a href=""><%= post.tag%></a></li>
+					</ul>
+				<% } else { %>
+					<li><%= post.tag %></li>
+					<ul>
+						<li><a href=""><%= post.tag%></a></li>
+					</ul>
+				<% } %>	
+			<%	})  %> 
+			</ul>
 		</div>
-		<p>text preview</p>
-		<a href="">Read more...</a>
+		<a href="">Add New Post</a>
+		<div class="col-9">
+			<div class="article">
+				<p>date</p>
+				<div class="article_head">
+					<h2>homepage</h2> 
+					<h4>tag</h4>
+				</div>
+				<p>text preview</p>
+				<a href="">Read more...</a>
+			</div>
+			<% posts.forEach(function(post){ %>
+				<div class="article">
+					<p><%= post.createdAt.toLocaleString() %></p>
+					<div class="article_head">
+						<h2><%= post.title %></h2>
+						<h4><%= post.tag %></h4>
+					</div>
+					<p><%= post.text.substring(0, 100) %> ...</p>
+					<a href="">Read more...</a>
+				</div>
+			<% }) %>
+		</div>
 	</div>
 	
-	
-	<% posts.forEach(function(post){ %>
-		<div class="article row col-9">
-			<p><%= post.createdAt.toLocaleString() %></p>
-			<div class="article_head">
-				<h2><%= post.title %></h2>
-				<h4><%= post.tag %></h4>
-			</div>
-			<p><%= post.text.substring(0, 100) %> ...</p>
-			<a href="">Read more...</a>
-		</div>
-	<% }) %>
 	
 
 </div>

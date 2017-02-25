@@ -224,37 +224,34 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-}
-
-
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+    [class*="col-"] {
+    float: left;
+	}
+	[class*="col-"]:after {
+    	content: "";
+    	clear: both;
+    	display: table;
+	}
 }
 
 div.container {
 	margin-top: 55px;
 }
 
-div.container >a{
-	display: block;
-	text-align: center;
 
-}
 
 div.row {
-	margin: auto;
+	display: block;
+	text-align: center;
 }
 
 div.article {
-
 	padding: 10px;
-	margin: 4% auto;
+	margin: 4% 15%;
 	color: white;
 	background: #444;
 	border-radius: 10px;
+	overflow: auto;
 }
 
 div.article a{
@@ -282,8 +279,13 @@ div.article_head {
 	justify-content: space-between;
 }
 
-div.article_head >span {
-
+.tag {
+	list-style-type: none;
 }
+
+.tag >ul {
+	list-style-type: none;
+}
+
 
 

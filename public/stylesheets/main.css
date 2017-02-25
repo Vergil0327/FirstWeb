@@ -291,5 +291,31 @@ div.article_head +p {
 	list-style-type: none;
 }
 
+div.container {
+	margin: auto;
+}
+
+.form-group button{
+	display: block;
+	margin: auto;
+}
+
+.form-item {
+	display: block;
+	width: 50%;
+	text-align: left;
+	margin: 1% auto;
+}
+
+.form-item {
+	display: block;
+	width: 50%;
+	text-align: left;
+	margin: 1% auto;
+}
+
+.form-item input, textarea {
+	width: 100%;
+}
 
 

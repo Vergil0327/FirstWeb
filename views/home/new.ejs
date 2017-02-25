@@ -1,0 +1,23 @@
+<% include ../partials/homeHeader %>
+
+<div class="container">
+		<form class="form-group" action="/homepage" method="POST">	
+			<div class="form-item">
+				<h1>Write an Article</h1>
+				<h3>Title</h3>
+				<input type="text" name="post[title]" placeholder="title">
+			</div>
+			<div class="form-item">
+				<h3>Tag</h3>
+				<input type="text" name="post[tag]" placeholder="tag">
+			</div>
+			<div class="form-item">
+				<h3>Content</h3>
+				<textarea name="post[text]"  rows="10"></textarea>
+			</div>
+			<button>Submit</button>
+		</form>
+</div>
+
+
+<% include ../partials/footer %>

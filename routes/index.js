@@ -19,9 +19,19 @@ router.get("/homepage", function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			res.render("home", {posts: allPosts});
+			res.render("./home/home", {posts: allPosts});
 		}
 	});
+});
+
+//CREATE ROUTES
+router.post("/homepage", function(req, res){
+	res.send("CREATE ROUTES");
+});	
+
+//NEW ROUTES
+router.get("/homepage/new", function(req, res){
+	res.render("./home/new");
 });
 
 router.get("/about", function(req, res){

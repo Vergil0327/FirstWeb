@@ -117,8 +117,11 @@ html {
 }
 
 body {
-	max-width: 100%;
+	position: relative;
+	width: 100%;
 	min-height: 100%;
+	margin: 0;
+	padding: 0
 	background: #eee;
 }
 
@@ -128,8 +131,17 @@ nav.container {
 	width: 100%;
 	border-radius: 3px;
 	background: #aaa;
+	background: -webkit-linear-gradient(#222, #a9a, #aaa); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#222, #a9a, #aaa); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#222, #a9a, #aaa); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#222, #a9a, #aaa); /* Standard syntax */
+
 	text-transform: uppercase;
 	font-weight: bold;
+
+	-moz-box-shadow:    1px 1px 1px 1px #ccc;
+  	-webkit-box-shadow: 1px 1px 1px 1px #ccc;
+ 	 box-shadow:        1px 1px 1px 1px #ccc;
 }
 
 nav.container a {
@@ -348,12 +360,12 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
 
 div.container {
 	margin-top: 55px;
+	height: 100%;
 }
 
-
-
 div.row {
-	display: block;
+	display: table;
+	height: 100%;
 	text-align: center;
 }
 
@@ -364,6 +376,10 @@ div.article {
 	background: #444;
 	border-radius: 10px;
 	overflow: auto;
+
+	-moz-box-shadow:    2px 2px 5px 2px #aaa;
+  	-webkit-box-shadow: 2px 2px 5px 2px #aaa;
+ 	 box-shadow:        2px 2px 5px 2px #aaa;
 }
 
 div.article a{
@@ -394,6 +410,15 @@ div.article_head {
 
 div.article_head +p {
 	text-align: left;
+}
+
+.tag-list {
+	height: 100%;
+	background: #ded;
+    background: -webkit-linear-gradient(#ded, #7fe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ded, #7fe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ded, #7fe); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ded, #7fe); /* Standard syntax */
 }
 
 .tag {
@@ -464,3 +489,5 @@ h3.signature {
 	color: #d11;
 	cursor: pointer;
 }
+
+

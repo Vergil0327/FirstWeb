@@ -46,9 +46,11 @@ app.use(require('express-session')({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+// use static authenticate method of model in LocalStrategy
 //deprecate passport.use(new LocalStrategy(User.authenticate())); // User.authenticate() comes from passport-local-mongoose
 // Starting with version 0.2.1, CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
 passport.use(User.createStrategy());
+// use static serialize and deserialize of model for passport session support
 passport.serializeUser(User.serializeUser()); //User.serializeUser() pass from passport-local-mongoose
 passport.deserializeUser(User.deserializeUser()); //User.deserializeUser() pass from passport-local-mongoose
 

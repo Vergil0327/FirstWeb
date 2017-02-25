@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Yatra+One');
 
 @media only screen and (min-width: 581px) {
-	body {
+	/*body {
 		font-size: 0.9em;
 	}
 	li.brand {
@@ -23,10 +23,10 @@
 		content: "";
 	    clear: both;
 	    display: table;
-	}
+	}*/
 }
 
-@media only screen and (max-width: 580px) {
+/*@media only screen and (max-width: 580px) {
 	body {
 		font-size: 0.8em;
 	}
@@ -70,6 +70,13 @@
 	    display: table;
 	}
 
+	.form-item {
+	display: block;
+	text-align: left;
+	width: 100%;
+	margin: 1% auto;
+}
+
 
 }
 
@@ -96,11 +103,11 @@
 	    display: table;
 	}
 
-}
+}*/
 
 
 
-* {
+*, button {
 	font-family: 'cwTeXYen','Yatra One', cursive, sans-serif;
 	box-sizing: border-box;
 }
@@ -208,9 +215,66 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
 
 /* RWD Grid */
 /* For mobile phones: */
+
+
+@media only screen and (max-width: 580px) {
+	body {
+		font-size: 0.8em;
+	}
+	nav.container {
+		min-width: 450px;
+	}
+	li.brand {
+		width: 90px;
+	}
+	li.signIn{
+	display: inline-block;
+	position: relative;
+	float: right;
+	}
+	.signIn a{
+		display: block;
+		visibility: hidden;
+	}
+	.fa-chevron-circle-down {
+		display: block;
+		font-size: 2em;
+		background: #aaa;
+	}
+	li.signIn:hover .fa-chevron-circle-down {
+		color: #dfd;
+	}
+
+	li.signIn:hover a {
+		visibility: visible;
+		display: block;
+		background: #aaa;
+	}
+	nav.container li {
+		width: 100%;
+	}
+	
+
+	li.signIn:after{
+		content: "";
+	    clear: both;
+	    display: table;
+	}
+
+	.form-item {
+	display: block;
+	text-align: left;
+	width: 100%;
+	margin: 1% auto;
+}
+
 [class*="col-"] {
     width: 100%;
 }
+
+
+}
+
 @media only screen and (min-width: 581px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
@@ -233,6 +297,53 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
     	clear: both;
     	display: table;
 	}
+
+	body {
+		font-size: 0.9em;
+	}
+	li.brand {
+		width: 110px;
+	}
+	.fa-chevron-circle-down {
+		display: none;
+	}
+	li.signIn{
+	display: inline-block;
+	position: relative;
+	float: right;
+	top: 16px;
+	}
+
+	li.signIn:after{
+		content: "";
+	    clear: both;
+	    display: table;
+	}
+}
+
+@media only screen and (min-width: 869px) {
+	body {
+		font-size: 1.1em;
+	}
+	nav.container li {
+		width: 170px;
+	}
+	.fa-chevron-circle-down {
+		display: none;
+	}
+	li.signIn{
+	display: inline-block;
+	position: relative;
+	float: right;
+	top: 16px;
+	}
+
+	li.signIn:after{
+		content: "";
+	    clear: both;
+	    display: table;
+	}
+
 }
 
 div.container {
@@ -278,6 +389,7 @@ div.article >p{
 div.article_head {
 	display: flex;
 	justify-content: space-between;
+	clear: both;
 }
 
 div.article_head +p {
@@ -297,21 +409,15 @@ div.container {
 }
 
 .form-group button{
+	float: none;
 	display: block;
 	margin: auto;
 }
 
 .form-item {
 	display: block;
-	width: 50%;
 	text-align: left;
-	margin: 1% auto;
-}
-
-.form-item {
-	display: block;
-	width: 50%;
-	text-align: left;
+	width: 75%;
 	margin: 1% auto;
 }
 
@@ -326,8 +432,35 @@ div.container {
 	padding: 3%;
 	border-radius: 3px;
 	background: black;
-}
+	}
 
 h3.signature {
 	text-align: right;
+}
+
+#modification a {
+	margin-right: 10px;
+	display: block;
+}
+
+#edit:hover {
+	color: #fa1;
+}
+
+#danger {
+	color: #eee;
+	background-color: black;
+	border-style: none;
+	float: right;
+}
+
+#danger:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+#danger:hover {
+	color: #d11;
+	cursor: pointer;
 }

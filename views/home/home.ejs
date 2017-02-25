@@ -9,14 +9,14 @@
 			<% posts.forEach(function(post){ %>	
 				<% if(post.tag.toLowerCase() === "test"){ %>
 					<ul>
-						<li><a href=""><%= post.title %></a></li>
+						<li><a href="/homepage/<%= post._id%>"><%= post.title %></a></li>
 					</ul>
 				<% } %>
 			<% }) %> 
 			<% posts.forEach(function(post){ if(post.tag.toLowerCase() !== "test"){ %>
 					<li><%= post.tag %></li>
 					<ul>
-						<li><a href=""><%= post.title %></a></li>
+						<li><a href="/homepage/<%= post._id%>"><%= post.title %></a></li>
 					</ul>
 				<% } %>	
 			<% }) %> 

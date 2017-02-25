@@ -51,6 +51,40 @@ router.get("/homepage/:id", function(req, res){
 	});
 });
 
+//EDIT ROUTES
+router.get("/homepage/:id/edit", function(req, res){
+	Post.findById(req.params.id, function(err, foundPost){
+		if(err) {
+			console.log(err);
+		}else {
+			res.render("./home/edit", {post: foundPost});
+		}
+	})
+});
+
+//UPDATE ROUTES
+router.put("/homepage/:id", function(req, res){
+	//find and update the correct post !important findByIdAndUpdate(find_that_data, input_that_data, callback)
+	Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
+		if(err) {
+			res.redirect("/homepage");
+		}else {
+			res.redirect("/homepage/" + req.params.id);
+		}
+	})
+});
+
+//DESTORY ROUTES
+router.delete("/homepage/:id", function(req, res){
+	Post.findByIdAndRemove(req.params.id, function(err){
+		if(err) {
+			res.redirect("/homepage");
+		}else {
+			res.redirect("/homepage");
+		}
+	})
+});
+
 router.get("/about", function(req, res){
 	res.render("about");
 });

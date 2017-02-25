@@ -53,7 +53,12 @@ var data = [
 	{
 		title: "Test_3",
 		text: "Test_3 substring 方法傳回的字串將包含從 start 開始到 end 的子字串，但不包含後者本身。 substring 方法會使用 start 和 end 中較小的值做為子字串的起點。例如 strvar.substring(0, 3) 和 strvar.substring(3, 0) 會傳回相同的子字串。 如果 start 或 end 中的任何一個是 NaN 或負數，其值將會變成 0。 子字串的長度等於 start 和 end 二者之間差異的絕對值。例如，strvar.substring(0, 3) 和 strvar.substring(3, 0) 中所傳回的子字串長度都是 3。",
-		tag: "Type_3"
+		tag: "test"
+	},
+	{
+		title: "Test_3",
+		text: "Test_3 substring 方法傳回的字串將包含從 start 開始到 end 的子字串，但不包含後者本身。 substring 方法會使用 start 和 end 中較小的值做為子字串的起點。例如 strvar.substring(0, 3) 和 strvar.substring(3, 0) 會傳回相同的子字串。 如果 start 或 end 中的任何一個是 NaN 或負數，其值將會變成 0。 子字串的長度等於 start 和 end 二者之間差異的絕對值。例如，strvar.substring(0, 3) 和 strvar.substring(3, 0) 中所傳回的子字串長度都是 3。",
+		tag: "test"
 	}
 ];
 

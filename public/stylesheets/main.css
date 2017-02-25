@@ -119,6 +119,7 @@ nav.container {
 	display: block;
 	position: relative;
 	width: 100%;
+	border-radius: 3px;
 	background: #aaa;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -318,4 +319,15 @@ div.container {
 	width: 100%;
 }
 
+#showPage {
+	color: #eee;
+	height: 100vh;
+	margin: 0;
+	padding: 3%;
+	border-radius: 3px;
+	background: black;
+}
 
+h3.signature {
+	text-align: right;
+}

@@ -5,37 +5,25 @@
 		<div class="col-3">
 			<ul class="tag">
 			<strong><h3>Tag List</h3></strong>
+			<li>Test Tag</li>
 			<% posts.forEach(function(post){ %>	
-				<% if(post.tag === "Type_1"){ %>
-					<li><%= post.tag %></li>
+				<% if(post.tag.toLowerCase() === "test"){ %>
 					<ul>
-						<li><a href=""><%= post.tag%></a></li>
+						<li><a href=""><%= post.title %></a></li>
 					</ul>
-				<% } else if(post.tag ==="Type_2"){ %>
+				<% } %>
+			<% }) %> 
+			<% posts.forEach(function(post){ if(post.tag.toLowerCase() !== "test"){ %>
 					<li><%= post.tag %></li>
 					<ul>
-						<li><a href=""><%= post.tag%></a></li>
-					</ul>
-				<% } else { %>
-					<li><%= post.tag %></li>
-					<ul>
-						<li><a href=""><%= post.tag%></a></li>
+						<li><a href=""><%= post.title %></a></li>
 					</ul>
 				<% } %>	
-			<%	})  %> 
+			<% }) %> 
 			</ul>
 		</div>
 		<a href="/homepage/new">Add New Post</a>
 		<div class="col-9">
-			<div class="article">
-				<p>date</p>
-				<div class="article_head">
-					<h2>Title - Example</h2> 
-					<h4>tag</h4>
-				</div>
-				<p>text preview</p>
-				<a href="">Read more...</a>
-			</div>
 			<% posts.forEach(function(post){ %>
 				<div class="article">
 					<p><%= post.createdAt.toLocaleString() %></p>
@@ -44,7 +32,7 @@
 						<h4><%= post.tag %></h4>
 					</div>
 					<p><%= post.text.substring(0, 100) %> ...</p>
-					<a href="">Read more...</a>
+					<a href="/homepage/<%= post._id %>">Read more...</a>
 				</div>
 			<% }) %>
 		</div>

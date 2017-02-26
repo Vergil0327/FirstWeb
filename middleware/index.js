@@ -63,6 +63,13 @@ var middlewaeObj = {
 				return next();
 			}
 		})
+	},
+	administrator: function(req, res, next){
+		if(req.isAuthenticated()){
+			return next();
+		}else {
+			res.redirect("/homepage/login");
+		}
 	}
 };
 

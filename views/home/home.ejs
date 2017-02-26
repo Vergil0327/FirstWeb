@@ -31,7 +31,9 @@
 			<% }) %> 
 			</ul>
 		</div>
+		<% if(currentUser){ %>
 		<a href="/homepage/new">Add New Post</a>
+		<% } %>
 		<div class="col-9">
 			<% posts.forEach(function(post){ %>
 				<div class="article">

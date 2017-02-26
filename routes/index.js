@@ -25,9 +25,16 @@ router.get("/homepage", function(req, res){
 });
 
 //CREATE ROUTES
-router.post("/homepage", function(req, res){
+router.post("/homepage", middleware.administrator, function(req, res){
 	//get data from post request
-	var newPost = req.body.post;
+	// var newPost = req.body.post;
+	// console.log(req.user);
+	var author = {
+		username: req.user.username,
+		id: req.user._id
+	}
+
+	var newPost = {title: req.body.post.title, tag: req.body.post.tag, text: req.body.post.text, author: author}
 	console.log("Create a new post: ",newPost);
 	//create data in mongoDB
 	Post.create(newPost, function(err){
@@ -40,7 +47,7 @@ router.post("/homepage", function(req, res){
 });	
 
 //NEW ROUTES
-router.get("/homepage/new", function(req, res){
+router.get("/homepage/new", middleware.administrator, function(req, res){
 	res.render("./home/new");
 });
 
@@ -52,7 +59,7 @@ router.get("/homepage/:id", function(req, res){
 });
 
 //EDIT ROUTES
-router.get("/homepage/:id/edit", function(req, res){
+router.get("/homepage/:id/edit", middleware.administrator, function(req, res){
 	Post.findById(req.params.id, function(err, foundPost){
 		if(err) {
 			console.log(err);
@@ -63,7 +70,7 @@ router.get("/homepage/:id/edit", function(req, res){
 });
 
 //UPDATE ROUTES
-router.put("/homepage/:id", function(req, res){
+router.put("/homepage/:id", middleware.administrator, function(req, res){
 	//find and update the correct post !important findByIdAndUpdate(find_that_data, input_that_data, callback)
 	Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
 		if(err) {
@@ -75,7 +82,7 @@ router.put("/homepage/:id", function(req, res){
 });
 
 //DESTORY ROUTES
-router.delete("/homepage/:id", function(req, res){
+router.delete("/homepage/:id", middleware.administrator, function(req, res){
 	Post.findByIdAndRemove(req.params.id, function(err){
 		if(err) {
 			res.redirect("/homepage");

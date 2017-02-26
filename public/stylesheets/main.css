@@ -14,6 +14,7 @@ html {
 body {
 	position: relative;
 	width: 100%;
+	height: 100%;
 	min-height: 100%;
 	margin: 0;
 	padding: 0
@@ -40,24 +41,7 @@ body {
 	position: relative;
 	float: right;
 	}
-	.signIn a{
-		display: block;
-		visibility: hidden;
-	}
-	.fa-chevron-circle-down {
-		display: block;
-		font-size: 2em;
-		background: #aaa;
-	}
-	li.signIn:hover .fa-chevron-circle-down {
-		color: #dfd;
-	}
 
-	li.signIn:hover a {
-		visibility: visible;
-		display: block;
-		background: #aaa;
-	}
 	nav.container li {
 		width: 100%;
 	}
@@ -131,9 +115,6 @@ body {
 	li.brand {
 		width: 110px;
 	}
-	.fa-chevron-circle-down {
-		display: none;
-	}
 	li.signIn{
 	display: inline-block;
 	position: relative;
@@ -174,9 +155,6 @@ body {
 	}
 	nav.container li {
 		width: 170px;
-	}
-	.fa-chevron-circle-down {
-		display: none;
 	}
 	li.signIn{
 	display: inline-block;
@@ -260,7 +238,7 @@ nav.container >ul li a {
 }
 
 /*Navbar bottom-line*/
-nav.container >ul li:not(.brand):not(.signIn) {
+nav.container >ul li:not(.brand) {
 	padding-right: 3px;
 	border-right: solid white 1px;
 }
@@ -273,7 +251,7 @@ nav.container >ul li:not(.brand):after{
 	transition: transform 1s ease-in-out;
 }
 
-nav.container >ul li:not(.brand):hover:after:not(.signIn){
+nav.container >ul li:not(.brand):hover:after{
 	border-bottom: solid #222 2px;
 	transform: scaleX(1);
 }
@@ -308,9 +286,8 @@ nav.container ul li:not(.brand) span:nth-child(2) {
 nav.container ul li:hover:not(.brand) span:nth-child(2) {
 	display: inline-block;
 	transform: scale(1);
-	color: #474;
+	color: #2c2;
 }
-
 
 
 .tag-list h3 {
@@ -377,10 +354,18 @@ div.container {
 	margin: auto;
 }
 
+.form-group {
+	padding-top: 3%;
+}
+
 .form-group button{
 	float: none;
 	display: block;
 	margin: auto;
+}
+
+.form-group h3{
+	margin: 0;
 }
 
 .form-item {
@@ -388,6 +373,7 @@ div.container {
 	text-align: left;
 	width: 75%;
 	margin: 1% auto;
+	padding-bottom: 10px;
 }
 
 .form-item input, textarea {
@@ -434,4 +420,33 @@ h3.signature {
 	cursor: pointer;
 }
 
+#danger:active {
+	position: relative;
+	top: 2px;
+}
 
+div.login {
+	height: 100%;
+	background: #DE6262; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #DE6262 , #FFB88C); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #DE6262 , #FFB88C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+input[type=text], textarea, button {
+	  outline: none;
+}
+
+input[type=text], textarea {
+  -webkit-transition: all 0.50s ease-in-out;
+  -moz-transition: all 0.50s ease-in-out;
+  -ms-transition: all 0.50s ease-in-out;
+  -o-transition: all 0.50s ease-in-out;
+  transition: all 0.50s ease-in-out;
+  margin: 5px auto;
+  border: 1px solid #ddd;
+}
+ 
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(281, 23, 28, 1);
+  border: 1px solid rgba(281, 23, 28, 1);
+}

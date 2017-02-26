@@ -57,12 +57,16 @@ router.get("/logout", function(req, res){
 		res.render("home/login");
 	});
 	//handle login logic
-	router.post("/homepage/login", function(req, res){
-		console.log(req.body.username);
-		console.log(req.body.password);
-		res.send("login post route");
+	router.post("/homepage/login", passport.authenticate("local", {
+		successRedirect: "/homepage",
+		failureRedirect: "/homepage/login"
+	}), function(req, res){
 	});
-
+//logout routes
+router.get("/homepage/logout", function(req, res){
+	req.logout();
+	res.redirect("/homepage");
+});
 
 
 module.exports = router;

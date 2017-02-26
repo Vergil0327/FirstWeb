@@ -24,7 +24,7 @@ router.get("/", function(req, res){
 });
 
 //Create Route - add new city to DB
-router.post("/", middleware.isLoggedIn, function(req, res){
+router.post("/", middleware.CheckWhoYouAre, function(req, res){
 	// get data from form and add to cities array
 	var name = req.body.name;
 	var img = req.body.image;
@@ -40,7 +40,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 		if(err){
 			console.log(err);
 		} else{
-			console.log(newlyCreatedCity); //check
+			// console.log(newlyCreatedCity); //check
 			//redirect back to city page
 			res.redirect("/city");
 		}

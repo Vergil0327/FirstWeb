@@ -69,7 +69,6 @@ app.use("/", authRoutes);
 app.use("/", indexRoutes);
 
 
-
 app.listen(3000, function(){
 	console.log('Server Has Started !')
 })

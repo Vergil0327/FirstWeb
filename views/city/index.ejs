@@ -4,7 +4,7 @@
 	<div class="container">
 		<h1>Welcom to My PhotoBLOG !</h1>
 		<p>Memories all over Taiwan</p>
-		<% if(currentUser){ %>
+		<% if(currentUser && currentUser.username ==="admin"){ %>
 		<p>
 			<a class="btn btn-primary btn-large" href="/city/new">Add New Photo</a>
 		</p>

@@ -3,7 +3,7 @@ var City = require('../models/city'),
 	Comment = require('../models/comment'),
 	User 	= require('../models/user');
 
-var middlewaeObj = {
+var middlewareObj = {
 	checkCityOwnership: function(req, res, next){
 		if(req.isAuthenticated()){
 			City.findById(req.params.id, function(err, foundCity){
@@ -70,7 +70,19 @@ var middlewaeObj = {
 		}else {
 			res.redirect("/homepage/login");
 		}
+	},
+	CheckWhoYouAre: function(req, res, next){
+		if(req.isAuthenticated()){
+			if(req.user.username === "admin"){
+				return next();
+			}else {
+				req.flash("error", "You're not allowed to do that");
+				res.redirect("/city");
+			}
+		}else {
+			res.redirect("back");
+		}
 	}
 };
 
-module.exports = middlewaeObj;
+module.exports = middlewareObj;

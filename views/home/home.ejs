@@ -5,7 +5,7 @@
 		<div class="col-3 tag-list">
 			<ul class="tag">
 			<strong><h3>Tag List</h3></strong>
-			<li>Test Tag</li>
+			<li>Test</li>
 			<% posts.forEach(function(post){ %>	
 				<% if(post.tag.toLowerCase() === "test"){ %>
 					<ul>
@@ -13,12 +13,21 @@
 					</ul>
 				<% } %>
 			<% }) %> 
-			<% posts.forEach(function(post){ if(post.tag.toLowerCase() !== "test"){ %>
-					<li><%= post.tag %></li>
+			<li>Type_1</li>
+			<% posts.forEach(function(post){ %>	
+				<% if(post.tag.toLowerCase() === "type_1"){ %>
 					<ul>
 						<li><a href="/homepage/<%= post._id%>"><%= post.title %></a></li>
 					</ul>
-				<% } %>	
+				<% } %>
+			<% }) %> 
+			<li>Type_2</li>
+			<% posts.forEach(function(post){ %>	
+				<% if(post.tag.toLowerCase() === "type_2"){ %>
+					<ul>
+						<li><a href="/homepage/<%= post._id%>"><%= post.title %></a></li>
+					</ul>
+				<% } %>
 			<% }) %> 
 			</ul>
 		</div>

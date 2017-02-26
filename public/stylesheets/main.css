@@ -2,31 +2,29 @@
 @import url(//fonts.googleapis.com/earlyaccess/cwtexyen.css);
 @import url('https://fonts.googleapis.com/css?family=Yatra+One');
 
-@media only screen and (min-width: 581px) {
-	/*body {
-		font-size: 0.9em;
-	}
-	li.brand {
-		width: 110px;
-	}
-	.fa-chevron-circle-down {
-		display: none;
-	}
-	li.signIn{
-	display: inline-block;
-	position: relative;
-	float: right;
-	top: 16px;
-	}
-
-	li.signIn:after{
-		content: "";
-	    clear: both;
-	    display: table;
-	}*/
+*, button {
+	font-family: 'cwTeXYen','Yatra One', cursive, sans-serif;
+	box-sizing: border-box;
 }
 
-/*@media only screen and (max-width: 580px) {
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0
+	background: #eee;
+}
+
+/* RWD Grid */
+/* For mobile phones: */
+
+
+@media only screen and (max-width: 580px) {
 	body {
 		font-size: 0.8em;
 	}
@@ -37,6 +35,7 @@
 		width: 90px;
 	}
 	li.signIn{
+	background: #aaa;
 	display: inline-block;
 	position: relative;
 	float: right;
@@ -75,9 +74,98 @@
 	text-align: left;
 	width: 100%;
 	margin: 1% auto;
+	}
+
+	[class*="col-"] {
+	    width: 100%;
+	}
+	
+	div.container {
+	margin-top: 55px;
+	height: 100%;
+	}
+
+	div.row {
+		display: table;
+		text-align: center;
+	}
+
+	.tag-list {
+	height: 100%;
+	background: #ded;
+    background: -webkit-linear-gradient(#ded, #7fe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ded, #7fe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ded, #7fe); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ded, #7fe); /* Standard syntax */
+	}
+
+
 }
 
+@media only screen and (min-width: 581px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    [class*="col-"] {
+    float: left;
+	}
+	[class*="col-"]:after {
+    	content: "";
+    	clear: both;
+    	display: table;
+	}
 
+	body {
+		font-size: 0.9em;
+	}
+	li.brand {
+		width: 110px;
+	}
+	.fa-chevron-circle-down {
+		display: none;
+	}
+	li.signIn{
+	display: inline-block;
+	position: relative;
+	float: right;
+	top: 16px;
+	}
+
+	li.signIn:after{
+		content: "";
+	    clear: both;
+	    display: table;
+	}
+
+	div.container {
+	margin-top: 55px;
+	height: 100%;
+	}
+
+	div.row {
+		display: table;
+		height: 100%;
+		text-align: center;
+	}
+
+	.tag-list {
+	height: 100%;
+	background: #ded;
+    background: -webkit-linear-gradient(#ded, #7fe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ded, #7fe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ded, #7fe); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ded, #7fe); /* Standard syntax */
+	}
 }
 
 @media only screen and (min-width: 869px) {
@@ -102,27 +190,27 @@
 	    clear: both;
 	    display: table;
 	}
-
-}*/
-
-
-
-*, button {
-	font-family: 'cwTeXYen','Yatra One', cursive, sans-serif;
-	box-sizing: border-box;
-}
-
-html {
+	
+	div.container {
+	margin-top: 55px;
 	height: 100%;
-}
+	}
 
-body {
-	position: relative;
-	width: 100%;
-	min-height: 100%;
-	margin: 0;
-	padding: 0
-	background: #eee;
+	div.row {
+		display: table;
+		height: 100%;
+		text-align: center;
+	}
+
+	.tag-list {
+	height: 100%;
+	background: #ded;
+    background: -webkit-linear-gradient(#ded, #7fe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ded, #7fe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ded, #7fe); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ded, #7fe); /* Standard syntax */
+	}
+
 }
 
 nav.container {
@@ -131,10 +219,10 @@ nav.container {
 	width: 100%;
 	border-radius: 3px;
 	background: #aaa;
-	background: -webkit-linear-gradient(#222, #a9a, #aaa); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#222, #a9a, #aaa); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#222, #a9a, #aaa); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#222, #a9a, #aaa); /* Standard syntax */
+	background: -webkit-linear-gradient(#222, #aaa); 
+    background: -o-linear-gradient(#222, #a9a); 
+    background: -moz-linear-gradient(#222, #aaa); 
+    background: linear-gradient(#222, #aaa); 
 
 	text-transform: uppercase;
 	font-weight: bold;
@@ -225,149 +313,14 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
 
 
 
-/* RWD Grid */
-/* For mobile phones: */
-
-
-@media only screen and (max-width: 580px) {
-	body {
-		font-size: 0.8em;
-	}
-	nav.container {
-		min-width: 450px;
-	}
-	li.brand {
-		width: 90px;
-	}
-	li.signIn{
-	display: inline-block;
-	position: relative;
-	float: right;
-	}
-	.signIn a{
-		display: block;
-		visibility: hidden;
-	}
-	.fa-chevron-circle-down {
-		display: block;
-		font-size: 2em;
-		background: #aaa;
-	}
-	li.signIn:hover .fa-chevron-circle-down {
-		color: #dfd;
-	}
-
-	li.signIn:hover a {
-		visibility: visible;
-		display: block;
-		background: #aaa;
-	}
-	nav.container li {
-		width: 100%;
-	}
-	
-
-	li.signIn:after{
-		content: "";
-	    clear: both;
-	    display: table;
-	}
-
-	.form-item {
-	display: block;
-	text-align: left;
-	width: 100%;
-	margin: 1% auto;
+.tag-list h3 {
+	margin: 0;
 }
 
-[class*="col-"] {
-    width: 100%;
+ul.tag {
+	margin-top: 0;
 }
 
-
-}
-
-@media only screen and (min-width: 581px) {
-    /* For desktop: */
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-    [class*="col-"] {
-    float: left;
-	}
-	[class*="col-"]:after {
-    	content: "";
-    	clear: both;
-    	display: table;
-	}
-
-	body {
-		font-size: 0.9em;
-	}
-	li.brand {
-		width: 110px;
-	}
-	.fa-chevron-circle-down {
-		display: none;
-	}
-	li.signIn{
-	display: inline-block;
-	position: relative;
-	float: right;
-	top: 16px;
-	}
-
-	li.signIn:after{
-		content: "";
-	    clear: both;
-	    display: table;
-	}
-}
-
-@media only screen and (min-width: 869px) {
-	body {
-		font-size: 1.1em;
-	}
-	nav.container li {
-		width: 170px;
-	}
-	.fa-chevron-circle-down {
-		display: none;
-	}
-	li.signIn{
-	display: inline-block;
-	position: relative;
-	float: right;
-	top: 16px;
-	}
-
-	li.signIn:after{
-		content: "";
-	    clear: both;
-	    display: table;
-	}
-
-}
-
-div.container {
-	margin-top: 55px;
-	height: 100%;
-}
-
-div.row {
-	display: table;
-	height: 100%;
-	text-align: center;
-}
 
 div.article {
 	padding: 10px;
@@ -410,15 +363,6 @@ div.article_head {
 
 div.article_head +p {
 	text-align: left;
-}
-
-.tag-list {
-	height: 100%;
-	background: #ded;
-    background: -webkit-linear-gradient(#ded, #7fe); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#ded, #7fe); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#ded, #7fe); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#ded, #7fe); /* Standard syntax */
 }
 
 .tag {

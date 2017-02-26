@@ -16,4 +16,14 @@
 	display: inline;
 }
 
+.form-group {
+	display: block;
+	text-align: center;
+}
+
+.btn-lg {
+	display: block;
+	margin: auto;
+	width: 200px;
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - -*/

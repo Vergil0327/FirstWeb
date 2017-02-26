@@ -21,7 +21,7 @@ router.post("/register", middleware.checkUserExistence, function(req, res){
 			return res.redirect("/register");
 		}
 		passport.authenticate("local")(req, res, function(){
-			req.flash("success", "Welcome " + user.name);
+			req.flash("success", "Welcome " + user.username);
 			res.redirect("/city");
 		});
 	});

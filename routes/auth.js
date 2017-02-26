@@ -5,7 +5,7 @@ var User     = require('../models/user');
 var middleware = require('../middleware');
 
 //==========================
-//     REGISTER ROUTE
+//    CITY REGISTER ROUTE
 //==========================
 //show register form
 router.get("/register", function(req, res){
@@ -28,7 +28,7 @@ router.post("/register", middleware.checkUserExistence, function(req, res){
 });
 
 //==========================
-//     LOGIN ROUTE
+//    CITY LOGIN ROUTE
 //==========================
 //show login form
 router.get("/login", function(req, res){
@@ -42,12 +42,27 @@ router.post("/login", passport.authenticate("local", {
 });
 
 //==========================
-//     LOGout ROUTE
+//    CITY LOGOUT ROUTE
 //==========================
 router.get("/logout", function(req, res){
 	req.logout();
 	req.flash("success", "You've been logged out, Bye ~");
 	res.redirect("/city");
 });
+
+// --------------------------------
+//HOMEPAGE LOGIN ROUTES
+	//show login page
+	router.get("/homepage/login", function(req,res){
+		res.render("home/login");
+	});
+	//handle login logic
+	router.post("/homepage/login", function(req, res){
+		console.log(req.body.username);
+		console.log(req.body.password);
+		res.send("login post route");
+	});
+
+
 
 module.exports = router;

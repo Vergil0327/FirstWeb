@@ -93,7 +93,7 @@ router.delete("/homepage/:id", middleware.administrator, function(req, res){
 
 
 router.get("/about", function(req, res){
-	res.render("about");
+	res.render("./home/about");
 });
 
 

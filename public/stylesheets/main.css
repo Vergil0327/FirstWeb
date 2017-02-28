@@ -300,7 +300,15 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
 
 
 .tag-list h3 {
-	margin: 0;
+	margin: 9px;
+}
+
+.tag-list a {
+	color: blue;
+}
+
+.tag-list a:hover {
+	color: #a7a;
 }
 
 ul.tag {
@@ -384,6 +392,7 @@ div.article_head +p {
 
 #showPage {
 	color: #eee;
+	height: 100%;
 	margin: 0;
 	padding: 2%;
 	border-radius: 3px;
@@ -452,19 +461,15 @@ input[type=text]:focus, textarea:focus {
 /*About Page*/
 
 div.container {
+	position: relative;
+	min-height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 5%;
-	padding-right: 5%;
+	padding: 5% 5%;
 	background: #eee;
 }
 
-div.container>h1 {
-	margin-top: 0;
-	padding-top: 50px;
-}
-
-div.container h2:last-child {
+div.container h2:last-child, ul:last-child {
 	margin-bottom: 0;
 }
 
@@ -475,9 +480,16 @@ div.container h2:last-child {
 
 /*homeFooter*/
 footer {
+	clear: both;
+	display: block;
+	height: 1.5em;
 	background: #556270;
 	background: -webkit-linear-gradient(to left, #556270, #4ECDC4 );
 	background: linear-gradient(to left, #556270, #4ECDC4 );
 	text-align: center;
+}
+
+footer p {
+	margin-top: 0;
 }
 

@@ -19,7 +19,7 @@ router.get("/homepage", function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			res.render("./home/home", {posts: allPosts});
+			res.render("./home/index", {posts: allPosts});
 		}
 	});
 });

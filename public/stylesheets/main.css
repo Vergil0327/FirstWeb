@@ -2,7 +2,7 @@
 @import url(//fonts.googleapis.com/earlyaccess/cwtexyen.css);
 @import url('https://fonts.googleapis.com/css?family=Yatra+One');
 
-*, button {
+*, button, select {
 	font-family: 'cwTeXYen','Yatra One', cursive, sans-serif;
 	box-sizing: border-box;
 }
@@ -210,6 +210,16 @@ nav.container {
  	 box-shadow:        1px 1px 1px 1px #ccc;
 }
 
+.brand_fadeout {
+	transition: 1s;
+	opacity: 0;
+}
+
+.brand_fadein {
+	transition: 1s;
+	opacity: 1;
+}
+
 nav.container a {
 	color: black;
 	text-decoration: none;
@@ -290,12 +300,14 @@ nav.container ul li:hover:not(.brand) span:nth-child(2) {
 }
 
 
+
 .tag-list h3 {
 	margin: 0;
 }
 
 ul.tag {
-	margin-top: 0;
+	margin-top: 15px;
+	padding: 0;
 }
 
 
@@ -307,9 +319,9 @@ div.article {
 	border-radius: 10px;
 	overflow: auto;
 
-	-moz-box-shadow:    2px 2px 5px 2px #aaa;
-  	-webkit-box-shadow: 2px 2px 5px 2px #aaa;
- 	 box-shadow:        2px 2px 5px 2px #aaa;
+	-moz-box-shadow:    2px 2px 5px 1px #aaa;
+  	-webkit-box-shadow: 2px 2px 5px 1px #aaa;
+ 	 box-shadow:        2px 2px 5px 1px #aaa;
 }
 
 div.article a{
@@ -380,14 +392,15 @@ div.container {
 	width: 100%;
 }
 
+/*SHOW PAGE*/
+
 #showPage {
 	color: #eee;
-	height: 100vh;
 	margin: 0;
-	padding: 3%;
+	padding: 2%;
 	border-radius: 3px;
 	background: black;
-	}
+}
 
 h3.signature {
 	text-align: right;
@@ -409,12 +422,6 @@ h3.signature {
 	float: right;
 }
 
-#danger:after {
-	content: "";
-	clear: both;
-	display: table;
-}
-
 #danger:hover {
 	color: #d11;
 	cursor: pointer;
@@ -424,6 +431,8 @@ h3.signature {
 	position: relative;
 	top: 2px;
 }
+
+/*LOGIN PAGE*/
 
 div.login {
 	height: 100%;

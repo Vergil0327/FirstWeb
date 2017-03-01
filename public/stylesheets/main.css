@@ -89,6 +89,50 @@ a:hover{
     background: linear-gradient(#ded, #7fe); /* Standard syntax */
 	}
 
+	div.container h1 {
+		cursor: pointer;
+		-webkit-transition: color 0.5s;
+		-moz-transition: color 0.5s;
+		-o-transition: color 0.5s;
+		transition: color 0.5s;
+	}
+
+	div.container h1:hover {
+		color: rgba(10, 10, 225, 0.8);	
+	}
+
+	div.container h1:after {
+		display: block;
+		width: 250px;
+		content: "";
+		border-bottom: dotted 1px red;
+
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		transition: all 0.5s;
+
+		-webkit-transform: scaleX(0);
+		-moz-transform: scaleX(0);
+		-o-transform: scaleX(0);
+		transform: scaleX(0);
+	}
+	
+	div.container h1:hover:after {
+		display: block;
+		width: 250px;
+		content: "";
+		border-bottom: dotted 1px red;
+		-webkit-transform: scaleX(1);
+		-moz-transform: scaleX(1);
+		-o-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+
+	.text {
+		display: none;
+		transition: max-height 0.5s ease-in-out;
+	}
 
 }
 
@@ -467,16 +511,24 @@ div.container {
 	margin-right: auto;
 	padding: 5% 5%;
 	background: #eee;
+	cursor: default;
 }
 
-div.container h2:last-child, ul:last-child {
-	margin-bottom: 0;
+div.container h1{
+	margin: auto;
+	padding: 5px 0;
+}
+
+div.container ul {
+	margin: auto;
+	height: 100%;
 }
 
 .fa-github-square {
 	font-size: 1.3em;
 	color: #248843;
 }
+
 
 /*homeFooter*/
 footer {

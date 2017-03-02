@@ -141,7 +141,7 @@ for(var i = 0; i < toggleButton.length; i++){
 		if(checkWindowWidth()){
 			toggleContent(toggleText);
 		}else {
-			toggleText.style.maxHeight = el.getAttribute("data-max-height"); //avoid that user can't toggle and see the content after user close text and resize window.innerWidth from <580px to >580px
+			toggleText.style.maxHeight = toggleText.offsetHeight; //avoid that user can't toggle and see the content after user close text and resize window.innerWidth from <580px to >580px
 		}
 	});
 }

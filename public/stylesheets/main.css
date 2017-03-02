@@ -567,6 +567,10 @@ div.container h1{
 	padding: 5px 0;
 }
 
+div.container h2{
+	margin: 0;
+}
+
 div.container ul {
 	margin: auto;
 	height: 100%;

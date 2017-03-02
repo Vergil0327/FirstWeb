@@ -55,15 +55,19 @@ hiddenNav.toTopBtn.addEventListener("click", function(){
 });
 
 /* show hidden nav when scroll down */
-window.onscroll = function(){
-	if(document.body.scrollTop > 1||document.documentElement.scrollTop > 1) {
-		hiddenNav.bar.style.top = "0";
-		navbar.bar.style.display = "none";
 
-	}else {
-		hiddenNav.bar.style.top = "-29px";
-		navbar.bar.style.display = "block";
+window.onscroll = function(){
+	if(checkWindowWidth()){
+			if(document.body.scrollTop > 1||document.documentElement.scrollTop > 1) {
+			hiddenNav.bar.style.top = "0";
+			navbar.bar.style.display = "none";
+
+		}else {
+			hiddenNav.bar.style.top = "-29px";
+			navbar.bar.style.display = "block";
+		}
 	}
+	
 }
 
 

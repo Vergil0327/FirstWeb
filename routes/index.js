@@ -33,6 +33,7 @@ router.post("/homepage", middleware.administrator, function(req, res){
 		username: req.user.username,
 		id: req.user._id
 	}
+	req.body.post.text = req.sanitize(req.body.post.text);
 	var newPost = {title: req.body.post.title, tag: req.body.post.tag, text: req.body.post.text, author: author}
 	// console.log("Create a new post: ",newPost);
 	//create data in mongoDB

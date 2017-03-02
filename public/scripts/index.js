@@ -1,5 +1,6 @@
 // NAVBAR ANIMATION
 var navbar = {
+	bar: document.querySelector("nav.container"),
 	brand: document.querySelector(".brand h2"),
 	brandContent: document.querySelectorAll(".brand h2 i"),
 	isStart: false,
@@ -41,6 +42,30 @@ navbar.brand.addEventListener("mouseover", function(){
 		}
 		
 });
+//INDEX PAGE - HIDDEN BAR
+
+/* scroll to top button */
+var hiddenNav = {
+	bar: document.querySelector("#hidden_nav"),
+	toTopBtn: document.querySelector(".fa-arrow-circle-up")
+};
+
+hiddenNav.toTopBtn.addEventListener("click", function(){
+	window.scrollTo(0, 0);
+});
+
+/* show hidden nav when scroll down */
+window.onscroll = function(){
+	if(document.body.scrollTop > 1||document.documentElement.scrollTop > 1) {
+		hiddenNav.bar.style.top = "0";
+		navbar.bar.style.display = "none";
+
+	}else {
+		hiddenNav.bar.style.top = "-29px";
+		navbar.bar.style.display = "block";
+	}
+}
+
 
 //ABOUT PAGE IN MOBILE SIZE - TOGGLE CONTENT - ref: http://stackoverflow.com/questions/3795481/javascript-slidedown-without-jquery
 

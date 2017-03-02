@@ -42,7 +42,7 @@
 						<a href="/homepage/<%= post._id%>"><h2><%= post.title %></h2></a>
 						<h4><%= post.tag %></h4>
 					</div>
-					<p><%= post.text.substring(0, 100) %> ...</p>
+					<p><%- post.text.substring(0, 100) %> ...</p>
 					<a href="/homepage/<%= post._id %>">Read more...</a>
 				</div>
 			<% }) %>

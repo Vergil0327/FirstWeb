@@ -8,19 +8,20 @@
 
 */
 
-var express       = require('express'),
-	app 	      = express(),
-	bodyParser    = require('body-parser'),
-	mongoose      = require('mongoose'),
-	methodOverride= require('method-override'),
-	flash 		  = require('connect-flash'),  //install & require connect-flash
-	City 	      = require('./models/city'),
-	Comment       = require('./models/comment'),
-	seedDB 	      = require('./seeds'),
-	passport      = require('passport'),
-	LocalStrategy = require('passport-local'),
-	User 		  = require('./models/user'),
-	Post 		  = require('./models/post');
+var express          = require('express'),
+	app 	         = express(),
+	bodyParser       = require('body-parser'),
+	mongoose         = require('mongoose'),
+	methodOverride   = require('method-override'),
+	expressSanitizer = require("express-sanitizer"),
+	flash 		     = require('connect-flash'),  //install & require connect-flash
+	City 	         = require('./models/city'),
+	Comment          = require('./models/comment'),
+	seedDB 	         = require('./seeds'),
+	passport         = require('passport'),
+	LocalStrategy    = require('passport-local'),
+	User 		     = require('./models/user'),
+	Post 		     = require('./models/post');
 
 //requiring routes
 var commentRoutes = require('./routes/comments'),
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+app.use(expressSanitizer());
 app.use(flash());  //tell app to use connect-flash
 seedDB(); //Seed the database - add some example data to check if anything wrong occurs
 

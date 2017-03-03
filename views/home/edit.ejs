@@ -13,10 +13,13 @@
 			</div>
 			<div class="form-item">
 				<h3>Content</h3>
-				<textarea name="post[text]"  rows="10"><%=post.text%></textarea>
+				<textarea id="textarea" name="post[text]"  rows="10"><%=post.text%></textarea>
 			</div>
+			<button onclick="history.back()">Cancel</button>
 			<button>Submit</button>
+			<!-- <input type="button" value="Cancel" onclick="history.back()"> -->
 		</form>
+
 </div>
 
 

@@ -155,3 +155,33 @@ function checkWindowWidth(){
 	}
 }
 
+// handle tab in textarea 
+//ref: https://blog.allenchou.cc/js-textarea-tab/
+function insertAtCursor(myValue) {
+	myField = document.getElementById("textarea");
+	//IE support
+	if (document.selection) {
+	    myField.focus();
+	    sel = document.selection.createRange();
+	    sel.text = myValue;
+	}
+	//MOZILLA and others
+	else if (myField.selectionStart || myField.selectionStart == '0') {
+	    var startPos = myField.selectionStart;
+	    var endPos = myField.selectionEnd;
+	    myField.value = myField.value.substring(0, startPos)
+	        + myValue
+	        + myField.value.substring(endPos, myField.value.length);  // if lack of this line of code, when insert value into sentence, the sentence behind insert value will be cut off.
+	        myField.selectionStart = startPos + myValue.length;
+	        myField.selectionEnd = startPos + myValue.length;
+	} else {
+	    myField.value += myValue;
+	}
+}
+
+document.getElementById('textarea').onkeydown = function(e){
+	if (e.keyCode == 9) {   //keycode of 'tab': 9
+		e.preventDefault();
+		insertAtCursor('    ');
+	}
+}

@@ -456,12 +456,11 @@ div.article_head +p {
 
 .form-group {
 	padding-top: 3%;
+	text-align: center;
 }
 
 .form-group button{
-	float: none;
-	display: block;
-	margin: auto;
+	display: inline-block;
 }
 
 .form-group h3{

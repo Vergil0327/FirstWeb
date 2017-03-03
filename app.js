@@ -35,9 +35,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
-app.use(expressSanitizer());
+// app.use(expressSanitizer());
 app.use(flash());  //tell app to use connect-flash
-seedDB(); //Seed the database - add some example data to check if anything wrong occurs
+// seedDB(); //Seed the database - add some example data to check if anything wrong occurs
 
 //PASSPORT CONFIGURATION
 //Set up express-session

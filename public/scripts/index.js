@@ -179,9 +179,7 @@ function insertAtCursor(myValue) {
 	}
 }
 
-document.getElementById('textarea').onkeydown = function(e){
-	if (e.keyCode == 9) {   //keycode of 'tab': 9
-		e.preventDefault();
-		insertAtCursor('    ');
-	}
+// Check User if he/she really wants to delete the post 
+function checkDelete() {
+	return confirm("Are you sure?");
 }

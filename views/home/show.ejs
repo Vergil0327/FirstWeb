@@ -5,7 +5,7 @@
 		<% if(currentUser){ %>
 		<div id="modification">
 			<form action="/homepage/<%= post._id %>?_method=DELETE" method="POST" >
-				<button id="danger">Delete</button>
+				<button id="danger" onclick="return checkDelete()">Delete</button>
 			</form>
 			<a id="edit" href="/homepage/<%= post._id %>/edit">Edit</a>
 		</div>

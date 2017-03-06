@@ -4,8 +4,6 @@ var mongoose = require('mongoose');
 var citySchema = new mongoose.Schema({
 	name: String,
 	image: String,
-	photographer: String,
-	_from: String,
 	description: String,
 	author: {
 		id: {

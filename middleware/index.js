@@ -73,7 +73,7 @@ var middlewareObj = {
 	},
 	CheckWhoYouAre: function(req, res, next){
 		if(req.isAuthenticated()){
-			if(req.user.username === "admin"){
+			if(req.user.username === process.env.USER){
 				return next();
 			}else {
 				req.flash("error", "You're not allowed to do that");
@@ -82,15 +82,6 @@ var middlewareObj = {
 		}else {
 			res.redirect("back");
 		}
-	},
-	checkwhoyouare: function(req, res, next){
-		return new Promise(function(resolve, reject){
-			if(req.isAuthenticated()){
-				return resolve(req.isAuthenticated());
-			}else {
-				reject(res.redirect("back"));
-			}
-		})
 	}
 };
 

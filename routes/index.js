@@ -25,7 +25,7 @@ router.get("/homepage", function(req, res){
 });
 
 //CREATE ROUTES
-router.post("/homepage", middleware.checkwhoyouare, function(req, res){
+router.post("/homepage", middleware.CheckWhoYouAre, function(req, res){
 	var author = {
 		username: req.user.username,
 		id: req.user._id

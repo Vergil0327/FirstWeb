@@ -49,6 +49,7 @@ app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
 	res.locals.error       = req.flash("error");    //{error: req.flash("error")} to every template
 	res.locals.success     = req.flash("success");  //{sucess: req.flash("sucess")} to every template
+	res.locals.user        = process.env.USER;
 	next();
 });
 
@@ -57,7 +58,6 @@ app.use("/city/:id/comments", commentRoutes);
 app.use("/city", cityRoutes); //define routes begain with /city
 app.use("/", authRoutes);
 app.use("/", indexRoutes);
-
 
 app.listen(app.get("port"), function(){
 	console.log('Server Has Started !')

@@ -43,7 +43,7 @@
 								</form>
 								<a class="btn btn-xs btn-warning pull-right" href="/city/<%= city._id %>/comments/<%= comment._id %>/edit">Edit</a>
 							<% } %>
-								<span class="pull-right">10 days ago</span>
+								<span class="pull-right"> <%= comment.createdAt.toLocaleString() %> </span>
 							<p>
 								<%= comment.text%>
 							</p>

@@ -107,14 +107,17 @@ router.get("/:id/edit", middleware.checkCityOwnership, function(req, res){
 //Update Route
 router.put("/:id", middleware.checkCityOwnership, function(req, res){
 	//find and update the correct city
-	City.findByIdAndUpdate(req.params.id, req.body.city, function(err, updatedCity){
-		if(err) {
-			res.redirect("/city");
-		}else {
-			//redirect to show page
-			res.redirect("/city/" + req.params.id);
-		}
-	} );
+	// City.findByIdAndUpdate(req.params.id, req.body.city, function(err, updatedCity){
+	// 	if(err) {
+	// 		res.redirect("/city");
+	// 	}else {
+	// 		//redirect to show page
+	// 		res.redirect("/city/" + req.params.id);
+	// 	}
+	// } );
+
+	/*Test promise but not sure if it works properly or not*/
+	City.findByIdAndUpdate(req.params.id, req.body.city).then(function(err){if(err){res.redirect("/city");}else{res.redirect("/city/" + req.params.id);}});
 });
 
 //DESTROY CITY ROUTE

@@ -82,6 +82,15 @@ var middlewareObj = {
 		}else {
 			res.redirect("back");
 		}
+	},
+	checkwhoyouare: function(req, res, next){
+		return new Promise(function(resolve, reject){
+			if(req.isAuthenticated()){
+				return resolve(req.isAuthenticated());
+			}else {
+				reject(res.redirect("back"));
+			}
+		})
 	}
 };
 

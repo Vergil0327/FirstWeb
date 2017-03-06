@@ -25,7 +25,7 @@ router.get("/homepage", function(req, res){
 });
 
 //CREATE ROUTES
-router.post("/homepage", middleware.administrator, function(req, res){
+router.post("/homepage", middleware.checkwhoyouare, function(req, res){
 	//get data from post request
 	// var newPost = req.body.post;
 	// console.log(req.user);
@@ -91,7 +91,6 @@ router.delete("/homepage/:id", middleware.administrator, function(req, res){
 		}
 	})
 });
-
 
 router.get("/about", function(req, res){
 	res.render("./home/about");

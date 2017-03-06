@@ -15,6 +15,7 @@ var express          = require('express'),
 	methodOverride   = require('method-override'),
 	expressSanitizer = require("express-sanitizer"),
 	flash 		     = require('connect-flash'),  //install & require connect-flash
+	dotEnv           = require('dotenv').config(),
 	City 	         = require('./models/city'),
 	Comment          = require('./models/comment'),
 	seedDB 	         = require('./seeds'),
@@ -29,10 +30,11 @@ var commentRoutes = require('./routes/comments'),
 	authRoutes    = require('./routes/auth'),
 	indexRoutes   = require('./routes/index');
 
-mongoose.connect('mongodb://localhost/yelp_taiwan');
+mongoose.connect(process.env.dev_DB);
 mongoose.Promise = global.Promise;
-app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
+app.set("port", process.env.PORT||3000);
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 // app.use(expressSanitizer());
@@ -71,15 +73,9 @@ app.use("/", authRoutes);
 app.use("/", indexRoutes);
 
 
-app.listen(3000, function(){
+app.listen(app.get("port"), function(){
 	console.log('Server Has Started !')
 })
-
-
-
-
-
-
 
 
 

@@ -79,7 +79,7 @@ router.get("/:id/edit", middleware.checkCityOwnership, function(req, res){
 
 //Update Route
 router.put("/:id", middleware.checkCityOwnership, function(req, res){
-	find and update the correct city
+	// find and update 
 	City.findByIdAndUpdate(req.params.id, req.body.city, function(err, updatedCity){
 		if(err) {
 			res.redirect("/city");

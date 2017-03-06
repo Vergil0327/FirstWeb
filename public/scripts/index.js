@@ -71,7 +71,7 @@ window.onscroll = function(){
 }
 
 
-//ABOUT PAGE IN MOBILE SIZE - TOGGLE CONTENT - ref: http://stackoverflow.com/questions/3795481/javascript-slidedown-without-jquery
+//ABOUT PAGE IN MOBILE SIZE - TOGGLE CONTENT
 
 /*Get height of element with display:none*/
 var getElHeight = function(el) {
@@ -107,8 +107,8 @@ var toggleContent = function(el) {
 			el_max_height                  = getElHeight(el) + 'px';
 			el.setAttribute('data-max-height', el_max_height);
 			el.style.overflowY             = 'hidden';  //make text hidden to avoid text overflow when max-height=0
-			el.style.maxHeight             = '0';       // caution: typeof(el.style.maxHeight) = string
-			el.style.display               = 'block';   // default value: {display: none}
+			el.style.maxHeight             = '0';       
+			el.style.display               = 'block';   
         }
 
 		//already set up "data-max-height" attribute
@@ -120,18 +120,6 @@ var toggleContent = function(el) {
     };
 
 /*execute*/
-
-// var toggleButton = document.querySelectorAll("div.container h1");
-// var toggleText   = document.querySelectorAll(".text");
-// for(var i = 0; i < toggleButton.length; i++){
-// 	toggleButton[i].addEventListener("click", function(){
-// 		toggleContent(toggleText[i]);  // ==> Common for-loop mistake: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Creating_closures_in_loops_A_common_mistake
-// 		                               //toggleText[i] will always the the last one(i.e. toggleText[7]) because iteration has already done & i became 7(last one)
-// 									   //need closure to create a new lexical environment to memorize i for every iteration of for-loop
-// 									   // or use 'let' keyword
-// 	});
-// }
-
 var toggleButton = document.querySelectorAll("div.container h1");
 // var toggleText   = document.querySelectorAll(".text");
 for(var i = 0; i < toggleButton.length; i++){
@@ -156,7 +144,6 @@ function checkWindowWidth(){
 }
 
 // handle tab in textarea 
-//ref: https://blog.allenchou.cc/js-textarea-tab/
 function insertAtCursor(myValue) {
 	myField = document.getElementById("textarea");
 	//IE support

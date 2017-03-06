@@ -26,16 +26,12 @@ router.get("/homepage", function(req, res){
 
 //CREATE ROUTES
 router.post("/homepage", middleware.checkwhoyouare, function(req, res){
-	//get data from post request
-	// var newPost = req.body.post;
-	// console.log(req.user);
 	var author = {
 		username: req.user.username,
 		id: req.user._id
 	}
 	// req.body.post.text = req.sanitize(req.body.post.text);
 	var newPost = {title: req.body.post.title, tag: req.body.post.tag, text: req.body.post.text, author: author}
-	// console.log("Create a new post: ",newPost);
 	//create data in mongoDB
 	Post.create(newPost, function(err){
 		if(err) {
@@ -71,7 +67,7 @@ router.get("/homepage/:id/edit", middleware.administrator, function(req, res){
 
 //UPDATE ROUTES
 router.put("/homepage/:id", middleware.administrator, function(req, res){
-	//find and update the correct post !important findByIdAndUpdate(find_that_data, input_that_data, callback)
+	//find and update the correct post 
 	Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
 		if(err) {
 			res.redirect("/homepage");

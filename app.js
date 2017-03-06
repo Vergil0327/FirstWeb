@@ -1,13 +1,3 @@
-/*
-#Adding in Flash Message !
-* Demo working version
-* Install and configure connect-flash
-* Add bootstrap alerts to header
-
-#Landing Page Refactor
-
-*/
-
 var express          = require('express'),
 	app 	         = express(),
 	bodyParser       = require('body-parser'),
@@ -37,9 +27,8 @@ app.set("port", process.env.PORT||3000);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
-// app.use(expressSanitizer());
-app.use(flash());  //tell app to use connect-flash
-// seedDB(); //Seed the database - add some example data to check if anything wrong occurs
+app.use(flash()); 
+// seedDB(); //Seed the database 
 
 //PASSPORT CONFIGURATION
 //Set up express-session
@@ -50,19 +39,16 @@ app.use(require('express-session')({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-// use static authenticate method of model in LocalStrategy
-//deprecate passport.use(new LocalStrategy(User.authenticate())); // User.authenticate() comes from passport-local-mongoose
-// Starting with version 0.2.1, CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
 passport.use(User.createStrategy());
 // use static serialize and deserialize of model for passport session support
 passport.serializeUser(User.serializeUser()); //User.serializeUser() pass from passport-local-mongoose
 passport.deserializeUser(User.deserializeUser()); //User.deserializeUser() pass from passport-local-mongoose
 
-//Middleware for SHOW/HIDE navbar link
+//Middleware 
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
-	res.locals.error       = req.flash("error");  //add {error: req.flash("error")} to every template
-	res.locals.success     = req.flash("success");  //add {sucess: req.flash("sucess")} to every template
+	res.locals.error       = req.flash("error");    //{error: req.flash("error")} to every template
+	res.locals.success     = req.flash("success");  //{sucess: req.flash("sucess")} to every template
 	next();
 });
 

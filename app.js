@@ -33,7 +33,7 @@ app.use(flash());
 //PASSPORT CONFIGURATION
 //Set up express-session
 app.use(require('express-session')({
-	secret: "Yelp Taiwan",
+	secret: process.env.session_secret,
 	resave: false,
 	saveUninitialized: false
 }))

@@ -1,6 +1,7 @@
 {
   "name": "yelp_camp_v.1",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "app.js",
   "dependencies": {

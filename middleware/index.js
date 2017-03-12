@@ -77,7 +77,7 @@ var middlewareObj = {
 				return next();
 			}else {
 				req.flash("error", "You're not allowed to do that");
-				res.redirect("/city");
+				res.redirect("/homepage");
 			}
 		}else {
 			res.redirect("back");

@@ -66,6 +66,9 @@ window.onscroll = function(){
 			hiddenNav.bar.style.top = "-29px";
 			navbar.bar.style.display = "block";
 		}
+	}else {
+		hiddenNav.bar.style.top = "-29px";
+		navbar.bar.style.display = "block";
 	}
 	
 }

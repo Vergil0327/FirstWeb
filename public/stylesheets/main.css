@@ -274,7 +274,7 @@ p {
 
 div.row {
 	width: 100%;
-	
+
 }
 
 nav.container {
@@ -494,6 +494,7 @@ div.article_head +p {
 	padding: 5% 2%;
 	border-radius: 3px;
 	background: black;
+	clear: both;
 }
 
 h3#signature {

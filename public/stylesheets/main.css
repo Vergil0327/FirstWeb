@@ -272,6 +272,10 @@ p {
 
 }
 
+div.row {
+	width: 100%;
+}
+
 nav.container {
 	display: block;
 	position: relative;

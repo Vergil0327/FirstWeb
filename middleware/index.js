@@ -73,11 +73,11 @@ var middlewareObj = {
 	},
 	CheckWhoYouAre: function(req, res, next){
 		if(req.isAuthenticated()){
-			if(req.user.username === process.env.USER){
+			if(req.user.username === process.env.websiteUser){
 				return next();
 			}else {
 				req.flash("error", "You're not allowed to do that");
-				res.redirect("/homepage");
+				res.redirect("back");
 			}
 		}else {
 			res.redirect("back");

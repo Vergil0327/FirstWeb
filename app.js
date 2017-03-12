@@ -49,7 +49,7 @@ app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
 	res.locals.error       = req.flash("error");    //{error: req.flash("error")} to every template
 	res.locals.success     = req.flash("success");  //{sucess: req.flash("sucess")} to every template
-	res.locals.user        = process.env.USER;
+	res.locals.user        = process.env.websiteUser;
 	next();
 });
 

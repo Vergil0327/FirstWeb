@@ -79,6 +79,7 @@ p {
 
 	div.row {
 		display: block;
+		height: 100%;
 		text-align: center;
 	}
 
@@ -274,6 +275,7 @@ p {
 
 div.row {
 	width: 100%;
+
 }
 
 nav.container {

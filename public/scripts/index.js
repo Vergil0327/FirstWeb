@@ -58,16 +58,15 @@ hiddenNav.toTopBtn.addEventListener("click", function(){
 
 window.onscroll = function(){
 	if(checkWindowWidth()){
-			if(document.body.scrollTop > 1||document.documentElement.scrollTop > 1) {
+		if(document.body.scrollTop > 1||document.documentElement.scrollTop > 1) {
 			hiddenNav.bar.style.top = "0";
 			navbar.bar.style.display = "none";
-
 		}else {
 			hiddenNav.bar.style.top = "-29px";
 			navbar.bar.style.display = "block";
 		}
 	}else {
-		hiddenNav.bar.style.top = "-29px";
+		hiddenNav.bar.style.display = "-29px";
 		navbar.bar.style.display = "block";
 	}
 	
@@ -139,7 +138,7 @@ for(var i = 0; i < toggleButton.length; i++){
 
 function checkWindowWidth(){
 	var windowWidth = window.innerWidth;
-	if(windowWidth < 580) {
+	if(windowWidth < 644) {
 		return true;
 	}else {
 		return false;

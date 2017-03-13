@@ -574,7 +574,7 @@ div.container ul {
 	height: 100%;
 }
 
-.fa-github-square {
+.fa-github-square, .fa-trophy {
 	font-size: 1.3em;
 	color: #248843;
 }

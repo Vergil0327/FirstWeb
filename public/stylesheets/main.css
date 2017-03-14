@@ -42,9 +42,7 @@ p {
 	body {
 		font-size: 0.8em;
 	}
-	nav.container {
-		min-width: 450px;
-	}
+
 	li.brand {
 		width: 90px;
 	}

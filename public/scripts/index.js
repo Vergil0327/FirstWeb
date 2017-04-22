@@ -21,7 +21,7 @@ var navbar = {
 		}
 
 		for(var j = 0; j < navbar.brandContent.length; j++){
-			var delayTime = 1200 + j * 400;
+			delayTime = 1200 + j * 400;
 			navbar.brandFadeIn(j, delayTime);	
 		}
 
@@ -31,7 +31,7 @@ var navbar = {
 				navbar.brandContent[i].classList.remove("brand_fadein");
 			}	
 			navbar.isStart = false;
-		}, 5600)
+		}, 5600);
 	}
 };
 
@@ -147,11 +147,11 @@ function checkWindowWidth(){
 
 // handle tab in textarea 
 function insertAtCursor(myValue) {
-	myField = document.getElementById("textarea");
+	var myField = document.getElementById("textarea");
 	//IE support
 	if (document.selection) {
 	    myField.focus();
-	    sel = document.selection.createRange();
+	    var sel = document.selection.createRange();
 	    sel.text = myValue;
 	}
 	//MOZILLA and others
@@ -168,12 +168,15 @@ function insertAtCursor(myValue) {
 	}
 }
 
-document.getElementById('textarea').onkeydown = function(e){
+if(document.getElementById('textarea')) {
+	document.getElementById('textarea').onkeydown = function(e){
 	if (e.keyCode == 9) {   //keycode of 'tab': 9
                 e.preventDefault();    
                 insertAtCursor('    '); 
 	}
-}
+}}
+
+
 
 // Check User if he/she really wants to delete the post 
 function checkDelete() {

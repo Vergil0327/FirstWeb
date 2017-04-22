@@ -62,6 +62,3 @@ app.use("/", indexRoutes);
 app.listen(app.get("port"), function(){
 	console.log('Server Has Started !')
 })
-
-
-
